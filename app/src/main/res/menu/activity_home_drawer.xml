@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_syllabus"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Syllabus" />
+        <item
+            android:id="@+id/item_study_time"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Study Time" />
+        <item
+            android:id="@+id/item_exam"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Exams" />
+        <item
+            android:id="@+id/item_calender"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Calender" />
+        <item
+            android:id="@+id/nav_scribble"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Scribble" />
+    </group>
+
+    <group android:checkableBehavior="none" android:id="@+id/secondaryMenu">
+        <item
+            android:id="@+id/item_share"
+            android:title="Share App" />
+        <item
+            android:id="@+id/item_rate"
+            android:title="Rate Us" />
+        <item
+            android:id="@+id/item_about_us"
+            android:title="About Us" />
+    </group>
+
+</menu>

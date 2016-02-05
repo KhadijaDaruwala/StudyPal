@@ -8,4 +8,9 @@
     <string name="title_activity_social_login">SocialLogin</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="facebook_app_id">1672988856319264</string>
+    <string name="title_activity_home">Syllabus</string>
+    <string name="title_activity_enter_syllabus">EnterSyllabus</string>
+    <string name="title_activity_study_time_main">StudyTimeMain</string>
+    <string name="TopicLabel">Topics :</string>
 </resources>
