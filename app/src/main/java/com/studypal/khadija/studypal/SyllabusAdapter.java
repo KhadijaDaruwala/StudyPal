@@ -6,11 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ConcurrentModificationException;
-
-/**
- * Created by Khadija on 10-01-2016.
- */
 public class SyllabusAdapter extends RecyclerView.Adapter<SyllabusAdapter.ItemHolder> {
     private Context mContext;
 
