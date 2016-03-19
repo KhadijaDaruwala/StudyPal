@@ -9,7 +9,19 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.studypal.khadija.studypal.StudyNavigation"
-    tools:showIn="@layout/app_bar_study_navigation">
+    tools:context="app.pal.study.samplestudy.NavBaseActivity"
+    tools:showIn="@layout/app_bar_nav_base">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
 </RelativeLayout>

@@ -93,7 +93,7 @@ public class SocialLogin extends AppCompatActivity implements GoogleApiClient.On
                         });
             }
         });
-        }
+    }
 
     // [START onActivityResult]
     @Override
@@ -177,7 +177,7 @@ public class SocialLogin extends AppCompatActivity implements GoogleApiClient.On
      *
      */
     private void redirectToHome() {
-        startActivity(new Intent(SocialLogin.this, HomeActivity.class));
+        startActivity(new Intent(SocialLogin.this, NavBaseActivity.class));
         finish();
     }
 }
