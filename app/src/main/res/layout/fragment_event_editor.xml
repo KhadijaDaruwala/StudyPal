@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/container_margin"
+    android:paddingRight="@dimen/container_margin"
+    android:paddingTop="@dimen/container_margin"
+    android:paddingBottom="@dimen/container_margin"
+    tools:context="com.app.calendar.eventeditor.EventEditorActivity.EventCreationFragment"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/event_title_text"
+        android:id="@+id/event_title"
+        android:layout_gravity="center" />
+
+    <EditText
+        android:gravity="top|start"
+        android:hint="@string/event_details_text"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/event_description"
+        android:layout_gravity="center" />
+
+    <DatePicker
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:layout_gravity="center" />
+
+    <CheckBox
+        android:id="@+id/all_day_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/all_day_event"
+        android:focusableInTouchMode="true" />
+
+    <TimePicker
+        android:visibility="gone"
+        android:id="@+id/time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:focusableInTouchMode="true" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/save_button_text"
+        android:id="@+id/button_save"
+        android:clickable="true"
+        android:enabled="false" />
+</LinearLayout>

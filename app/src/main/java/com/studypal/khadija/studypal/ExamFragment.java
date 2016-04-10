@@ -1,6 +1,6 @@
 package com.studypal.khadija.studypal;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +12,8 @@ public class ExamFragment  extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_exams, container, false);
+
+
 
         return rootView;
     }

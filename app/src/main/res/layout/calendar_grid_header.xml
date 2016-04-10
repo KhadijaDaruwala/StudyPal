@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    tools:showIn="@layout/fragment_calendar">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/sun_header"
+        android:textColor="@color/gray"
+        android:layout_gravity="center"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/gray"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/mon_header" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:textColor="@color/gray"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/tue_header" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:layout_weight="1"
+        android:text="@string/wed_header" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/gray"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/thu_header" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:textColor="@color/gray"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/fri_header" />
+
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:layout_weight="1"
+        android:text="@string/sat_header" />
+</LinearLayout>

@@ -10,4 +10,13 @@
     <color name="divider">#B6B6B6</color>
     <color name="background">#FFFFFF</color>
     <color name="text">#FFFFFF</color>
+
+
+    <color name="white">#fafafa</color>
+    <color name="white_gray">#d5d5d5</color>
+    <color name="gray">#aaa</color>
+    <color name="dark_gray">#555</color>
+    <color name="darker_gray">#333</color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#000</color>
 </resources>

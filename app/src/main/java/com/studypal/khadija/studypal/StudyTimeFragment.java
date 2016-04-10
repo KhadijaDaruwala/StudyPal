@@ -1,6 +1,6 @@
 package com.studypal.khadija.studypal;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.LayoutInflater;
@@ -76,42 +76,3 @@ public class StudyTimeFragment extends Fragment {
 }
 
 
-   /*     startButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Perform action on click
-                studyWatch.setBase(SystemClock.elapsedRealtime());
-                studyWatch.start();
-                return;
-            }
-        });
-
-        // the method for when we press the 'reset' button
-    public void resetButtonClick(View v) {
-        studyWatch.setBase(SystemClock.elapsedRealtime());
-        timeWhenStopped = 0;
-     //   TextView secondsText = (TextView)getView().findViewById(R.id.hmsTekst);
-      //  secondsText.setText("0 seconds");
-    }
-
-    // the method for when we press the 'start' button
-    public void startButtonClick(View v) {
-        studyWatch.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
-        studyWatch.start();
-        stopClicked = false;
-
-    }
-
-    // the method for when we press the 'stop' button
-    public void stopButtonClick(View v){
-        if (!stopClicked)  {
-           // TextView secondsText = (TextView)getView().findViewById(R.id.hmsTekst);
-            timeWhenStopped = studyWatch.getBase() - SystemClock.elapsedRealtime();
-            int seconds = (int) timeWhenStopped / 1000;
-          //  secondsText.setText( Math.abs(seconds) + " seconds");
-            studyWatch.stop();
-            stopClicked = true;
-        }
-    }
-
-    }
-*/

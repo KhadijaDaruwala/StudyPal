@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cell_background">
+    <ImageView
+        android:id="@+id/cell_indicator"
+        android:visibility="gone"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/marker"
+        android:layout_gravity="end|top" />
+    <TextView
+        android:id="@+id/cell_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:text="5"
+        android:textSize="@dimen/grid_text_size"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        android:gravity="center" />
+
+
+</FrameLayout>

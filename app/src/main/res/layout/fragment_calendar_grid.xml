@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="MonthFragment.com.app.calendar.monthgrid.MonthGridFragment"
+    android:orientation="vertical"
+    android:id="@+id/calendar_grid_layout">
+
+    <include layout="@layout/calendar_grid_header" />
+
+    <GridView
+        android:paddingTop="1dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_margin="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/calendar_grid_view"
+        android:numColumns="7"
+        android:stretchMode="columnWidth"
+        android:background="@color/white_gray"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp" />
+
+</LinearLayout>

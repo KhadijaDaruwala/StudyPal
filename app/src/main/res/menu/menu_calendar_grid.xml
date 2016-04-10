@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.app.calendar.monthgrid.MonthGridActivity">
+    <item
+        android:id="@+id/action_previous"
+        android:title="@string/prev_month"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/arrow_previous" />
+    <item
+        android:id="@+id/action_next"
+        android:title="@string/next_month"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/arrow_next" />
+    <item
+        android:id="@+id/all_events"
+        android:title="@string/view_all_events"
+        android:orderInCategory="101"
+        app:showAsAction="never"
+        android:icon="@android:drawable/ic_menu_view" />
+</menu>

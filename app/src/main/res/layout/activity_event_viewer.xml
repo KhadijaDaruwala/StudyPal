@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/container_margin">
+
+    <TextView
+        android:id="@+id/event_description_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notes_label"
+        android:textSize="@dimen/label_text_size"
+        android:layout_marginBottom="@dimen/item_vertical_distance" />
+
+    <TextView
+        android:textSize="@dimen/text_size"
+        android:id="@+id/event_description_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="the description the description the description the description the description the description the description"
+        android:layout_marginBottom="@dimen/item_vertical_distance" />
+
+    <TextView
+        android:textSize="@dimen/datetime_size"
+        android:id="@+id/event_date_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="12/21/2212, 55:00" />
+</LinearLayout>

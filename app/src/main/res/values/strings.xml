@@ -9,9 +9,42 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="facebook_app_id">1672988856319264</string>
-    <string name="title_activity_home">Syllabus</string>
+
     <string name="title_activity_enter_syllabus">EnterSyllabus</string>
     <string name="title_activity_study_time_main">StudyTimeMain</string>
     <string name="TopicLabel">Topics :</string>
     <string name="title_activity_home_nav">Home_nav</string>
+
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_syllabus">Syllabus</string>
+    <string name="title_activity_study_time">StudyTime</string>
+    <string name="title_activity_exam">Exam</string>
+    <string name="title_activity_calendar">Calendar</string>
+    <string name="title_activity_scribble">Scribble</string>
+
+
+    <string name="title_event_detail">Event Detail</string>
+    <string name="title_activity_calendar_grid">Calendar</string>
+    <string name="prev_month">Previous Month</string>
+    <string name="next_month">Next Month</string>
+    <string name="view_all_events">View All Events</string>
+    <string name="sun_header"><b>SUN</b></string>
+    <string name="mon_header"><b>MON</b></string>
+    <string name="tue_header"><b>TUE</b></string>
+    <string name="wed_header"><b>WED</b></string>
+    <string name="thu_header"><b>THU</b></string>
+    <string name="fri_header"><b>FRI</b></string>
+    <string name="sat_header"><b>SAT</b></string>
+    <string name="title_activity_event_creation">Create a New Event</string>
+
+    <string name="save_button_text">Save</string>
+    <string name="event_details_text">Notes</string>
+    <string name="event_title_text">Title</string>
+    <string name="all_day_event">All Day Event</string>
+    <string name="title_activity_event_list">Event List</string>
+    <string name="title_activity_event_view">View Event</string>
+    <string name="notes_label"><b>Notes</b></string>
+    <string name="edit_event">Edit Event</string>
+    <string name="delete_event">Remove Event</string>
+    <string name="title_activity_all_events">All Events</string>
 </resources>
