@@ -1,5 +1,6 @@
 package com.studypal.khadija.studypal;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
@@ -91,18 +92,25 @@ public class NavBaseActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         FragmentManager fm = getSupportFragmentManager();
         int id = item.getItemId();
+        String title="";
 
         if (id == R.id.item_home) {
             //Handle the Home click action
-            fm.beginTransaction().replace(R.id.content_frame,new HomeFragment()).commit();
+            fm.beginTransaction().replace(R.id.content_frame,new MainFragment()).commit();
+         //   title="Home";
+
         }
         else if (id == R.id.item_syllabus) {
             //Handle the Syllabus click action
-            fm.beginTransaction().replace(R.id.content_frame,new SyllabusFragment()).commit();
+            // fm.beginTransaction().replace(R.id.content_frame,new SyllabusFragment()).commit();
+            startActivity(new Intent(this, Syllabus.class));
+          //  title="Home";
 
         } else if (id == R.id.item_study_time) {
             //Handle the Study Time click action
             fm.beginTransaction().replace(R.id.content_frame,new StudyTimeFragment()).commit();
+            //title="Home";
+
 
         } else if (id == R.id.item_exam) {
             //Handle the Exams click action

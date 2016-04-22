@@ -1,7 +1,8 @@
 package com.studypal.khadija.studypal;
 
+import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -72,8 +73,10 @@ public class SocialLogin extends AppCompatActivity implements GoogleApiClient.On
             @Override
             public void onClick(View v) {
                 mLoginManager.logInWithReadPermissions(SocialLogin.this, Arrays.asList("public_profile", "email"));
+
                 mLoginManager.registerCallback(mCallbackManager,
                         new FacebookCallback<LoginResult>() {
+
                             @Override
                             public void onSuccess(LoginResult loginResult) {
                                 Toast.makeText(SocialLogin.this, "Fb Login Success", Toast.LENGTH_SHORT).show();
@@ -121,14 +124,27 @@ public class SocialLogin extends AppCompatActivity implements GoogleApiClient.On
         if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
-          /*
+
             String personName = acct.getDisplayName();
             String personEmail = acct.getEmail();
             String personId = acct.getId();
-            Uri personPhoto = acct.getPhotoUrl();
+     /*     Uri personPhoto = acct.getPhotoUrl();
             String idToken = acct.getIdToken();
             mIdTokenTextView.setText("ID Token: " + idToken);
             */
+            SharedPref sharedPref;
+            sharedPref = SharedPref.getInstance();
+            sharedPref.saveISLogged_IN(this, true);
+
+            SharedPreferences sharedPrefer = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor =sharedPrefer.edit();
+            editor.putString("username",personName.toString());
+            editor.putString("email", personEmail.toString());
+            editor.putString("id",personId.toString());
+            editor.apply();
+
+
+            Toast.makeText(this, personName+""+personEmail, Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "Sign In", Toast.LENGTH_SHORT).show();
             redirectToHome();
         } else {

@@ -56,6 +56,10 @@
         <activity
             android:name=".EventViewerActivity"
             android:label="@string/app_name" />
+        <activity
+            android:name=".Syllabus"
+            android:label="@string/title_activity_syllabus"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

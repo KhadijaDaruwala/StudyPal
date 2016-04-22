@@ -1,51 +1,46 @@
 package com.studypal.khadija.studypal;
 
-
+import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-public class SyllabusFragment extends Fragment{
-  //  private RecyclerView mRecyclerView;
+import com.studypal.khadija.studypal.Syllabus;
+
+public class SyllabusFragment extends Fragment implements View.OnClickListener {
+    //  private RecyclerView mRecyclerView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_syllabus, container, false);
 
-
+        setTitle();
         return rootView;
+
     }
 
- /*   @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    private void setTitle() {
+        getActivity().setTitle("Syllabus");
+    }
 
-        final FragmentActivity c =getActivity();
-        //Initialize recycler view
-        mRecyclerView = (RecyclerView)getView().findViewById(R.id.recyclerView);
-      //  mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //mRecyclerView.setAdapter(new SyllabusAdapter(this));
-        LinearLayoutManager layoutManager = new LinearLayoutManager(c);
-        mRecyclerView.setLayoutManager(layoutManager);
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        Button newBlockButton = (Button) getActivity().findViewById(
+                R.id.new_block_button);
+        newBlockButton.setOnClickListener((View.OnClickListener) this);
+    }
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                final SyllabusAdapter adapter = new SyllabusAdapter(c);
-                c.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mRecyclerView.setAdapter(adapter);
-                    }
-                });
-            }
-        }).start();
-    }*/
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(getActivity(), Syllabus.class);
+        startActivity(intent);
+    }
+
 }

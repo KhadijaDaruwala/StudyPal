@@ -68,9 +68,13 @@ public class StudyTimeFragment extends Fragment {
 
             }
         });
+        setTitle();
 
         return rootView;
 
+    }
+    private void setTitle() {
+        getActivity().setTitle("Study Time");
     }
 
 }

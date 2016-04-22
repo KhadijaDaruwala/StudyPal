@@ -23,7 +23,9 @@
         android:id="@+id/start_button"
         android:onClick="startButtonClick"
         android:layout_alignTop="@+id/stop_button"
-        android:layout_marginLeft="25dp" />
+        android:layout_marginLeft="25dp"
+        android:textColor="#ffffff"
+        style="@android:style/Animation" />
 
     <Button
         android:layout_width="wrap_content"
@@ -32,7 +34,9 @@
         android:text="Stop"
         android:id="@+id/stop_button"
         android:onClick="stopButtonClick"
-        android:layout_gravity="top|center" />
+        android:layout_gravity="top|center"
+        android:textColor="#ffffff"
+        style="@android:style/Animation" />
 
     <Button
         android:layout_width="wrap_content"
@@ -42,6 +46,8 @@
         android:id="@+id/reset_button"
         android:onClick="resetButtonClick"
         android:layout_alignTop="@+id/start_button"
-        android:layout_marginLeft="250dp"/>
+        android:layout_marginLeft="252dp"
+        android:textColor="#fffdfd"
+        style="@android:style/Animation" />
 
 </FrameLayout>

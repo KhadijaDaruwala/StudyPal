@@ -12,10 +12,10 @@ public class ExamFragment  extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_exams, container, false);
-
-
-
+        setTitle();
         return rootView;
     }
-
+    private void setTitle() {
+        getActivity().setTitle("Exam");
+    }
 }

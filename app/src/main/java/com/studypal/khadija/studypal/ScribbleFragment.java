@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+;
+
 
 public class ScribbleFragment extends Fragment {
     @Override
@@ -12,8 +14,11 @@ public class ScribbleFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_scribble, container, false);
+        setTitle();
 
         return rootView;
     }
-
+    private void setTitle() {
+        getActivity().setTitle("Scribble");
+    }
 }

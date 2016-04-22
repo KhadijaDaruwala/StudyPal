@@ -47,4 +47,9 @@
     <string name="edit_event">Edit Event</string>
     <string name="delete_event">Remove Event</string>
     <string name="title_activity_all_events">All Events</string>
+
+    <string name="subject_decription">Subject name:</string>
+    <string name="chapter_name">Chapter name:</string>
+    <string name="chapter_description">Chapter description:</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
