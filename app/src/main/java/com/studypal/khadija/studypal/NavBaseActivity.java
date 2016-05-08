@@ -1,8 +1,6 @@
 package com.studypal.khadija.studypal;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -11,30 +9,44 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-public class NavBaseActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import com.studypal.khadija.studypal.Calendar.CalendarFragment;
+import com.studypal.khadija.studypal.Login.AppSharedPref;
+import com.studypal.khadija.studypal.Scribble.ScribbleFragment;
 
+
+import com.studypal.khadija.studypal.StudyTime.StudyTimeFragment;
+import com.studypal.khadija.studypal.Syllabus.SyllabusActivity;
+import com.studypal.khadija.studypal.Syllabus.SyllabusFragment;
+import com.studypal.khadija.studypal.Syllabus.SyllabusFragmentNew;
+
+public class NavBaseActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
+
+    private AppSharedPref mAppSharedPref;
+    private TextView mUserNameTextView;
+    private TextView mUserEmailTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_base);
+        mAppSharedPref = new AppSharedPref(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        LinearLayout layout = (LinearLayout)layoutInflater.inflate(R.layout.nav_header_nav_base, null, false);
+
+
+        Log.d("OnSocialLogin create :", mAppSharedPref.getUserName());
 
         //Initialize the Drawer layout for the navigation drawer
 
@@ -45,6 +57,12 @@ public class NavBaseActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerLayout = navigationView.inflateHeaderView(R.layout.nav_header_nav_base);
+
+        mUserEmailTextView = (TextView)headerLayout.findViewById(R.id.userEmail);
+        mUserNameTextView = (TextView)headerLayout.findViewById(R.id.userName);
+        mUserNameTextView.setText(mAppSharedPref.getUserName());
+        mUserEmailTextView.setText(mAppSharedPref.getEmail());
         navigationView.setNavigationItemSelectedListener(this);
         //Call fragment manager
 
@@ -62,28 +80,6 @@ public class NavBaseActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.nav_base, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -101,9 +97,9 @@ public class NavBaseActivity extends AppCompatActivity
 
         }
         else if (id == R.id.item_syllabus) {
-            //Handle the Syllabus click action
-            // fm.beginTransaction().replace(R.id.content_frame,new SyllabusFragment()).commit();
-            startActivity(new Intent(this, Syllabus.class));
+            //Handle the SyllabusActivity click action
+            // fm.beginTransaction().replace(R.id.content_frame,new SyllabusFragmentNew()).commit();
+            startActivity(new Intent(this, SyllabusActivity.class));
           //  title="Home";
 
         } else if (id == R.id.item_study_time) {

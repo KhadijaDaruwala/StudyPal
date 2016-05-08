@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
-    tools:showIn="@layout/fragment_calendar">
+    tools:showIn="@layout/fragment_calendar_grid">
 
     <TextView
         android:layout_width="0dp"

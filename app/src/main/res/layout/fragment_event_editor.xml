@@ -6,7 +6,7 @@
     android:paddingRight="@dimen/container_margin"
     android:paddingTop="@dimen/container_margin"
     android:paddingBottom="@dimen/container_margin"
-    tools:context="com.app.calendar.eventeditor.EventEditorActivity.EventCreationFragment"
+    tools:context="com.studypal.khadija.studypal.Calendar.EventEditorActivity.EventCreationFragment"
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center">

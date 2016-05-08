@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:id="@+id/chronometer"
+        android:text="Large Text"
+        android:textSize="100dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF" />
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <Button
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:id="@+id/start_button"
+            android:onClick="startButtonClick"
+            android:layout_alignTop="@+id/stop_button"
+            android:textColor="#ffffff"
+            style="@android:style/Animation" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:id="@+id/stop_button"
+            android:onClick="stopButtonClick"
+            android:layout_gravity="top|center"
+            android:textColor="#ffffff"
+            style="@android:style/Animation" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+
+            android:text="Reset"
+            android:id="@+id/reset_button"
+            android:onClick="resetButtonClick"
+            android:layout_alignTop="@+id/start_button"
+            android:textColor="#fffdfd"
+            style="@android:style/Animation" />
+    </TableRow>
+
+</LinearLayout>

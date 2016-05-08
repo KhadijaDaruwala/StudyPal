@@ -4,30 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.studypal.khadija.studypal.Login.AppSharedPref;
+import com.studypal.khadija.studypal.Login.SocialLogin;
+
 public class MainActivity extends AppCompatActivity {
+    private AppSharedPref mAppSharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Intent intent = new Intent(this, SocialLogin.class);
-        startActivity(intent);
+        mAppSharedPref = new AppSharedPref(this);
+        startActivity(new Intent(this, mAppSharedPref.IsLoggedIN() ? NavBaseActivity.class : SocialLogin.class ));
         finish();
-
-        SharedPref sharedPref;
-        sharedPref = SharedPref.getInstance();
-        if (sharedPref.getISLogged_IN(MainActivity.this)) {
-            Intent NextScreen = new Intent(getApplicationContext(),
-                    NavBaseActivity.class);
-            startActivity(NextScreen);
-            finish();
-        }
-        else{
-            intent = new Intent(MainActivity.this, SocialLogin.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish();
-
-        }
     }
 }
