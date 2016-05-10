@@ -35,14 +35,14 @@ public class ScribbleFragment extends Fragment {
         this.databaseAccess = DatabaseAccess.getInstance(getActivity());
 
         this.listView = (ListView) rootView.findViewById(R.id.listView);
-        this.btnAdd = (Button)rootView.findViewById(R.id.btnAdd);
-
-        this.btnAdd.setOnClickListener(new View.OnClickListener() {
+       // this.btnAdd = (Button)rootView.findViewById(R.id.btnAdd);
+        rootView.findViewById(R.id.btnAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onAddClicked();
             }
         });
+
 
         this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

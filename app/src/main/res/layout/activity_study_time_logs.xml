@@ -14,15 +14,9 @@
         android:textSize="@dimen/label_text_size"
         android:layout_marginBottom="@dimen/item_vertical_distance" />
 
-    <TextView
-        android:textSize="@dimen/text_size"
-        android:id="@+id/studylogDesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="the description the description the description the description the description the description the description "
-        android:layout_marginBottom="@dimen/item_vertical_distance" />
 
-    <ListView
+
+    <ListView  xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/logList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

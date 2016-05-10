@@ -35,7 +35,6 @@ public class CalendarEventDataSource {
     public void openWritableDB() throws SQLException {
         database = dbHelper.getWritableDatabase();
     }
-
     public void openReadOnlyDB() throws SQLException {
         database = dbHelper.getReadableDatabase();
     }

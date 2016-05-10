@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:id="@+id/studylogDate"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="12/21/2212, 55:00"
-    android:textColor="@color/primary_text"
-    android:textSize="@dimen/datetime_size" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_margin="@dimen/container_margin">
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+    <TextView
+        android:layout_weight="1"
+        android:textSize="@dimen/text_size"
+        android:id="@+id/studylogChapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:text="Chaptername"
+        android:layout_marginBottom="@dimen/item_vertical_distance" />
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/studylogTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12/21/2212, 55:00"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/datetime_size" />
+       <!-- <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="StudyDate"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/datetime_size"
+            />-->
+</TableRow>
+
+
+
+</RelativeLayout>

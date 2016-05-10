@@ -9,7 +9,6 @@ import android.widget.BaseAdapter;
 import java.util.List;
 
 public class MonthDisplayAdapter extends BaseAdapter {
-
     private List<GridItem> gridItems;
     private int measuredHeight;
 

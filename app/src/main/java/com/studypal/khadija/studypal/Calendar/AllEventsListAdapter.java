@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import java.util.Date;
 import java.util.List;
 
+
 public class AllEventsListAdapter extends BaseAdapter {
     private List<CalendarEvent> allEvents;
 

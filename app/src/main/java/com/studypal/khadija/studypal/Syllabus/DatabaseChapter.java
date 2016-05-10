@@ -14,13 +14,13 @@ import java.util.Calendar;
 public class DatabaseChapter extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "assignmentDB.db";
+    private static final String DATABASE_NAME = "chapterDB.db";
 
-    private static final String TABLE = "assignments";
+    private static final String TABLE = "chapters";
 
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_CLASS = "class";
-    public static final String COLUMN_NAME = "assignmentname";
+    public static final String COLUMN_NAME = "chaptername";
     public static final String COLUMN_DESCRIPTION = "description";
     public static final String COLUMN_YEAR = "year";
     public static final String COLUMN_MONTH = "month";

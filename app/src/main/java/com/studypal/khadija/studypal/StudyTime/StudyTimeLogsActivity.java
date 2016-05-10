@@ -25,11 +25,11 @@ public class StudyTimeLogsActivity extends AppCompatActivity {
         mChapterName = getIntent().getStringExtra("chapter_name");
         DatabaseStudyLogs dbHandler = new DatabaseStudyLogs(getApplicationContext(), null, null, 1);
         Cursor cursor = dbHandler.getStudyLogCursor(mChapterName);
-        studylogDesc = (TextView)findViewById(R.id.studylogDesc);
+        studylogDesc = (TextView)findViewById(R.id.studylogChapter);
         // TODO set description here
         mLogListView = (ListView)findViewById(R.id.logList);
         if (cursor != null && cursor.getCount() > 0)
-        mLogListView.setAdapter(new LogAdapter(getApplicationContext(),cursor,0));
+            mLogListView.setAdapter(new LogAdapter(getApplicationContext(),cursor,0));
     }
 
     /**
@@ -54,7 +54,7 @@ public class StudyTimeLogsActivity extends AppCompatActivity {
 
         @Override
         public void bindView(View view, Context context, Cursor cursor) {
-            mLogDate = (TextView)view.findViewById(R.id.studylogDate);
+            mLogDate = (TextView)view.findViewById(R.id.studylogTime);
             mLogDate.setText(cursor.getInt(cursor.getColumnIndex(DatabaseStudyLogs.COLUMN_DATE_TIME))+"");
         }
     }

@@ -49,7 +49,7 @@ public class CreateChapterDialogFragment extends DialogFragment {
                     }
                 });
 
-        builder.setTitle("Create a class");
+        builder.setTitle("Create a chapter");
 
         return builder.create();
     }

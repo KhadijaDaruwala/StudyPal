@@ -5,21 +5,22 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.studypal.khadija.studypal.R;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import com.studypal.khadija.studypal.R;
 import static android.app.Activity.RESULT_OK;
+import static com.studypal.khadija.studypal.Calendar.Constants.DATE_KEY;
 
-public class CalendarFragment extends Fragment {
+public class MonthGridFragment extends Fragment {
     private static final int REQUEST_CODE = 1;
     private Calendar calendar;
 
@@ -28,7 +29,6 @@ public class CalendarFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_calendar_grid, container, false);
         return rootView;
     }
-
 
     @Override
     public void onResume() {
@@ -59,7 +59,7 @@ public class CalendarFragment extends Fragment {
     private void startListActivity(GridItem item) {
         calendar.set(Calendar.DATE, item.getDay());
         Intent intent = new Intent(getActivity(), EventListActivity.class);
-        intent.putExtra(Constants.DATE_KEY, calendar.getTime());
+        intent.putExtra(DATE_KEY, calendar.getTime());
         startActivityForResult(intent, REQUEST_CODE);
     }
 
@@ -75,7 +75,7 @@ public class CalendarFragment extends Fragment {
 
     public void showAllEvents() {
         Intent intent = new Intent(getActivity(), AllEventsActivity.class);
-        intent.putExtra(Constants.DATE_KEY, calendar.getTime());
+        intent.putExtra(DATE_KEY, calendar.getTime());
         startActivityForResult(intent, REQUEST_CODE);
     }
 
@@ -89,6 +89,7 @@ public class CalendarFragment extends Fragment {
 
     private void setTitle() {
         getActivity().setTitle(CalUtil.dateToFormattedString(calendar.getTime(), "MMMM, yyyy"));
+       ;
     }
 
     private void initListAdapter(final GridView calendarView) {

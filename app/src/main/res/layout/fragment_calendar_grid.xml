@@ -1,12 +1,13 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="MonthFragment.com.studypal.khadija.studypal.Calendar.MonthGridFragment"
     android:orientation="vertical"
+    tools:context="com.studypal.khadija.studypal.Calendar.MonthGridActivity"
     android:id="@+id/calendar_grid_layout">
 
     <include layout="@layout/calendar_grid_header" />
+
 
     <GridView
         android:paddingTop="1dp"
@@ -22,4 +23,4 @@
         android:horizontalSpacing="1dp"
         android:verticalSpacing="1dp" />
 
-</LinearLayout>
+</FrameLayout>

@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.studypal.khadija.studypal.Calendar.CalendarFragment;
+import com.studypal.khadija.studypal.Calendar.MonthGridFragment;
 import com.studypal.khadija.studypal.Login.AppSharedPref;
 import com.studypal.khadija.studypal.Scribble.ScribbleFragment;
 
@@ -39,8 +40,8 @@ public class NavBaseActivity extends AppCompatActivity  implements NavigationVie
         setContentView(R.layout.activity_nav_base);
         mAppSharedPref = new AppSharedPref(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       setSupportActionBar(toolbar);
 
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         LinearLayout layout = (LinearLayout)layoutInflater.inflate(R.layout.nav_header_nav_base, null, false);
@@ -108,13 +109,13 @@ public class NavBaseActivity extends AppCompatActivity  implements NavigationVie
             //title="Home";
 
 
-        } else if (id == R.id.item_exam) {
+        } /*else if (id == R.id.item_exam) {
             //Handle the Exams click action
             fm.beginTransaction().replace(R.id.content_frame, new ExamFragment()).commit();
 
-        } else if (id == R.id.item_calendar) {
+        } */else if (id == R.id.item_calendar) {
             //Handle the Calendar click action
-            fm.beginTransaction().replace(R.id.content_frame,new CalendarFragment()).commit();
+            fm.beginTransaction().replace(R.id.content_frame,new MonthGridFragment()).commit();
 
         } else if (id == R.id.nav_scribble) {
             //Handle the Scribble click action

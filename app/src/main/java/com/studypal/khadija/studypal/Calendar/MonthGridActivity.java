@@ -1,16 +1,18 @@
 package com.studypal.khadija.studypal.Calendar;
 
 import android.os.Bundle;
+
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toolbar;
 
 import com.studypal.khadija.studypal.R;
 
-
 public class MonthGridActivity extends ActionBarActivity {
 
-    private CalendarFragment calendarFragment;
+    private MonthGridFragment monthGridFragment;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -22,13 +24,13 @@ public class MonthGridActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_previous:
-                calendarFragment.loadLastMonth();
+                monthGridFragment.loadLastMonth();
                 return true;
             case R.id.action_next:
-                calendarFragment.loadNextMonth();
+                monthGridFragment.loadNextMonth();
                 return true;
             case R.id.all_events:
-                calendarFragment.showAllEvents();
+                monthGridFragment.showAllEvents();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -39,9 +41,9 @@ public class MonthGridActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar_grid);
 
-        calendarFragment = new CalendarFragment();
+        monthGridFragment = new MonthGridFragment();
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.activity_calendar_grid_container,calendarFragment)
+             //   .add(R.id.activity_calendar_grid_container, monthGridFragment)
                 .commit();
     }
 }

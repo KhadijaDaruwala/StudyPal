@@ -165,7 +165,7 @@ public class EventEditorFragment extends Fragment {
                 allDay ? 0 : timePicker.getCurrentHour(),
                 allDay ? 0 : timePicker.getCurrentMinute());
 
-       calendarEvent = new CalendarEvent(
+        calendarEvent = new CalendarEvent(
                 calendarEvent.getId(),
                 date,
                 titleEditor.getText().toString(),
@@ -186,5 +186,4 @@ public class EventEditorFragment extends Fragment {
         data.putExtra(Constants.EVENT_KEY, calendarEvent);
         getActivity().setResult(RESULT_OK, data);
         getActivity().finish();
-    }
-}
+    }}

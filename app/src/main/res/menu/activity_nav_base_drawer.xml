@@ -14,10 +14,10 @@
             android:id="@+id/item_study_time"
             android:icon="@drawable/ic_study_time"
             android:title="Study Time" />
-        <item
+        <!--<item
             android:id="@+id/item_exam"
             android:icon="@drawable/ic_exam"
-            android:title="Exams" />
+            android:title="Exams" />-->
         <item
             android:id="@+id/item_calendar"
             android:icon="@drawable/ic_calendar"
@@ -40,7 +40,7 @@
         <item
             android:id="@+id/item_about_us"
             android:icon="@drawable/ic_about_us"
-            android:title="About Us" />
+            android:title="Log Out" />
     </group>
 
 </menu>
