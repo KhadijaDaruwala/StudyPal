@@ -18,7 +18,7 @@ android:layout_margin="@dimen/container_margin">
         android:text="Chaptername"
         android:layout_marginBottom="@dimen/item_vertical_distance" />
     <TextView
-        android:layout_weight="1"
+        android:layout_weight="0.27"
         android:id="@+id/studylogTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -14,9 +14,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.studypal.khadija.studypal.Calendar.CalendarActivity;
 import com.studypal.khadija.studypal.Calendar.CalendarFragment;
 import com.studypal.khadija.studypal.Calendar.MonthGridFragment;
 import com.studypal.khadija.studypal.Login.AppSharedPref;
@@ -24,6 +26,7 @@ import com.studypal.khadija.studypal.Scribble.ScribbleFragment;
 
 
 import com.studypal.khadija.studypal.StudyTime.StudyTimeFragment;
+import com.studypal.khadija.studypal.StudyTime.StudyTimeLogsActivity;
 import com.studypal.khadija.studypal.Syllabus.SyllabusActivity;
 import com.studypal.khadija.studypal.Syllabus.SyllabusFragment;
 import com.studypal.khadija.studypal.Syllabus.SyllabusFragmentNew;
@@ -45,6 +48,16 @@ public class NavBaseActivity extends AppCompatActivity  implements NavigationVie
 
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         LinearLayout layout = (LinearLayout)layoutInflater.inflate(R.layout.nav_header_nav_base, null, false);
+        ImageButton settingsButton = (ImageButton) findViewById(R.id.button_studylog);
+
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Do whatever...
+                startActivity(new Intent(NavBaseActivity.this, StudyTimeLogsActivity.class));
+                finish();
+            }
+        });
 
 
         Log.d("OnSocialLogin create :", mAppSharedPref.getUserName());
@@ -115,7 +128,9 @@ public class NavBaseActivity extends AppCompatActivity  implements NavigationVie
 
         } */else if (id == R.id.item_calendar) {
             //Handle the Calendar click action
-            fm.beginTransaction().replace(R.id.content_frame,new MonthGridFragment()).commit();
+          fm.beginTransaction().replace(R.id.content_frame,new MonthGridFragment()).commit();
+           // startActivity(new Intent(this, CalendarActivity.class));
+
 
         } else if (id == R.id.nav_scribble) {
             //Handle the Scribble click action

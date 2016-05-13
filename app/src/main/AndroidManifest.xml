@@ -72,6 +72,11 @@
             android:name=".ShareAppActivity"
             android:label="@string/title_activity_share_app"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".Calendar.CalendarActivity"
+
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

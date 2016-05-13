@@ -10,9 +10,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.Profile;
+import com.facebook.ProfileTracker;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -45,6 +50,12 @@ public class SocialLogin extends AppCompatActivity implements GoogleApiClient.On
     private LoginButton mFbLoginButton;
     private AppSharedPref mSharePref;
     private LoginManager mLoginManager;
+    private AccessTokenTracker tokenTracker;
+    private ProfileTracker profileTracker;
+    private Profile profile;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +94,20 @@ public class SocialLogin extends AppCompatActivity implements GoogleApiClient.On
         mFbLoginButton = (LoginButton) findViewById(R.id.login_button);
         mLoginManager = LoginManager.getInstance();
         mCallbackManager  = CallbackManager.Factory.create();
+        tokenTracker=new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(AccessToken accessToken, AccessToken accessToken1) {
+
+            }};
+        profileTracker=new ProfileTracker() {
+            @Override
+            protected void onCurrentProfileChanged(Profile profile, Profile profile1) {
+            }
+        };
+
+        tokenTracker.startTracking();
+        profileTracker.startTracking();
+
         mFbLoginButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -94,7 +119,25 @@ public class SocialLogin extends AppCompatActivity implements GoogleApiClient.On
 
                             @Override
                             public void onSuccess(LoginResult loginResult) {
+                                AccessToken accessToken = loginResult.getAccessToken();
+                                profile = Profile.getCurrentProfile();
+
+                               /* StringBuilder loginResponse = new StringBuilder();
+                                loginResponse.append(loginResult.getAccessToken().getUserId());
+                                loginResponse.append(loginResult.getAccessToken().getToken());
+                                Toast.makeText(getApplicationContext(), loginResponse.toString() + "", Toast.LENGTH_SHORT).show();
+                              //  startActivity(new Intent(getApplicationContext(),ShareActivity.class));
+                                finish();*/
+
                                 // TODO
+                                String personName = "public_profile";
+                                String personEmail = "email";
+                                profile = Profile.getCurrentProfile();
+                                mSharePref.saveISLogged_IN(true);
+                                mSharePref.setUserName(personName);
+                                mSharePref.setEmail(personEmail);
+
+                            //    Toast.makeText(profile, mSharePref.getUserName()+""+mSharePref.getEmail(), Toast.LENGTH_SHORT).show();
                                 Toast.makeText(SocialLogin.this, "Fb Login Success", Toast.LENGTH_SHORT).show();
                                 redirectToHome();
                             }
@@ -113,6 +156,7 @@ public class SocialLogin extends AppCompatActivity implements GoogleApiClient.On
             }
         });
     }
+
 
     // [START onActivityResult]
     @Override
@@ -184,6 +228,7 @@ public class SocialLogin extends AppCompatActivity implements GoogleApiClient.On
     @Override
     protected void onResume() {
         super.onResume();
+        Profile profile = Profile.getCurrentProfile();
     }
     @Override
     protected void onPause() {

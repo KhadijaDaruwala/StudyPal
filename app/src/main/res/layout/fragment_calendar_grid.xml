@@ -2,11 +2,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.studypal.khadija.studypal.Calendar.MonthGridActivity"
     android:id="@+id/calendar_grid_layout">
+    <!--<android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/primary"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:elevation="4dp">
+     &lt;!&ndash;   <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/action_next"
+            android:title="@string/next_month"
+            android:orderInCategory="100"
+            android:layout_gravity="end|bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/arrow_next" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/action_previous"
+            android:title="@string/prev_month"
+            android:orderInCategory="100"
+            android:layout_gravity="end|bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/arrow_previous" />&ndash;&gt;
 
-    <include layout="@layout/calendar_grid_header" />
+    </android.support.v7.widget.Toolbar>-->
+
+    <!--<include layout="@layout/calendar_grid_header" />-->
 
 
     <GridView

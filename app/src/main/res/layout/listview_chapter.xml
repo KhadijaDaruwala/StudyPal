@@ -15,7 +15,8 @@
             android:maxLines="1"
             android:paddingBottom="4dp"
             android:paddingLeft="16dp"
-            android:paddingTop="32dp"
+            android:paddingTop="16dp"
+            android:textSize="17dp"
             android:text=""
             android:textColor="#000000" />
 
@@ -30,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:maxLength="40"
                 android:paddingLeft="16dp"
+                android:textSize="15dp"
                 android:text=""
                 android:textColor="#9E9E9E" />
 

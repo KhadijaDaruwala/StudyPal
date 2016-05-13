@@ -1,5 +1,6 @@
 package com.studypal.khadija.studypal.Calendar;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v7.app.ActionBarActivity;
@@ -8,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toolbar;
 
+import com.studypal.khadija.studypal.NavBaseActivity;
 import com.studypal.khadija.studypal.R;
 
 public class MonthGridActivity extends ActionBarActivity {
@@ -41,9 +43,11 @@ public class MonthGridActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar_grid);
 
-        monthGridFragment = new MonthGridFragment();
+        startActivity(new Intent(MonthGridActivity.this, CalendarActivity.class));
+
+       /* monthGridFragment = new MonthGridFragment();
         getSupportFragmentManager().beginTransaction()
              //   .add(R.id.activity_calendar_grid_container, monthGridFragment)
-                .commit();
+                .commit();*/
     }
 }

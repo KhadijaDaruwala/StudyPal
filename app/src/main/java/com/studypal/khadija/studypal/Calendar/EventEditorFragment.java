@@ -42,7 +42,18 @@ public class EventEditorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_event_editor, container, false);
+        Button btnCancel = (Button) rootView.findViewById(R.id.btnCancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onCancelClicked();
+            }
+        });
+
         return rootView;
+    }
+    public void onCancelClicked() {
+        getActivity().finish();
     }
 
     @Override
@@ -90,13 +101,13 @@ public class EventEditorFragment extends Fragment {
         allDayCheckbox = (CheckBox) getActivity().findViewById(R.id.all_day_checkbox);
         allDayCheckbox.setChecked(allDay);
 
-        timePicker = (TimePicker) getActivity().findViewById(R.id.time_picker);
+      /*  timePicker = (TimePicker) getActivity().findViewById(R.id.time_picker);
         timePicker.setCurrentHour(CalUtil.getHour(date));
         timePicker.setCurrentMinute(CalUtil.getMinute(date));
         timePicker.setIs24HourView(true);
         if (!allDay) {
             timePicker.setVisibility(VISIBLE);
-        }
+        }*/
 
         saveButton = (Button) getActivity().findViewById(R.id.button_save);
 

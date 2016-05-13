@@ -23,7 +23,7 @@ public class LogoutActivity_new extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // SocialLogin.signOut();
+       //SocialLogin.signOut();
 
        // GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN);
 
@@ -60,6 +60,12 @@ public class LogoutActivity_new extends AppCompatActivity implements
         }
 
     }*/
+
+   void OnConnected(Bundle bundle)
+   {
+       Boolean connect =true;
+       signOut();
+   }
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
 

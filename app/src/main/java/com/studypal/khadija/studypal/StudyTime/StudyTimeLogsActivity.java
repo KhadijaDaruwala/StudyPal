@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.media.tv.TvContract;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.studypal.khadija.studypal.Calendar.Constants;
+import com.studypal.khadija.studypal.MainFragment;
+import com.studypal.khadija.studypal.NavBaseActivity;
 import com.studypal.khadija.studypal.R;
 
 import java.text.DateFormat;
@@ -32,6 +35,21 @@ public class StudyTimeLogsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study_time_logs);
+        setTitle("Study Logs");
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       /* toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //What to do on back clicked
+                onBackPressed();
+            }
+        });*/
+        TextView mLogTitle =(TextView)findViewById(R.id.logTitle);
+
+
+
         mChapterName = getIntent().getStringExtra("chapter_name");
         mDateTime=getIntent().getStringExtra("date_time");
         DatabaseStudyLogs dbHandler = new DatabaseStudyLogs(getApplicationContext(), null, null, 1);
@@ -122,7 +140,10 @@ public class StudyTimeLogsActivity extends AppCompatActivity {
         /*Intent data = new Intent();
         data.putExtra(Constants.DATE_KEY, date);
         setResult(RESULT_OK, data);*/
+        startActivity(new Intent(StudyTimeLogsActivity.this, NavBaseActivity.class));
+
         finish();
+        return;
     }
 
 }

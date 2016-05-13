@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.app.calendar.eventeditor.EventEditorActivity.EventCreationFragment"
     android:paddingLeft="@dimen/container_margin"
     android:paddingRight="@dimen/container_margin"
     android:paddingTop="@dimen/container_margin"
     android:paddingBottom="@dimen/container_margin"
-    tools:context="com.app.calendar.eventeditor.EventEditorActivity.EventCreationFragment"
-    android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center">
 
@@ -41,20 +41,38 @@
         android:text="@string/all_day_event"
         android:focusableInTouchMode="true" />
 
-    <TimePicker
+   <!-- <TimePicker
         android:visibility="gone"
         android:id="@+id/time_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:focusableInTouchMode="true" />
+        android:focusableInTouchMode="true" />-->
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <Button
+            android:layout_weight="1"
+            android:layout_width="133dp"
+            android:layout_height="60dp"
+            android:textColor="@color/black"
+            android:text="@string/save_button_text"
+            android:id="@+id/button_save"
+            android:layout_gravity="bottom|left"
+            android:clickable="true"
+            android:enabled="false"
+           />
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btnCancel"
+            android:layout_width="133dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:text="Cancel"
+            android:textColor="@color/black"
+            android:layout_alignTop="@+id/button_save"
+            />
 
-    <Button
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="@string/save_button_text"
-        android:id="@+id/button_save"
-        android:clickable="true"
-        android:enabled="false" />
+    </TableRow>
+
 </LinearLayout>

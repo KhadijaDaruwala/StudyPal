@@ -26,8 +26,8 @@
             android:id="@+id/start_button"
             android:onClick="startButtonClick"
             android:layout_alignTop="@+id/stop_button"
-            android:textColor="#ffffff"
-            style="@android:style/Animation" />
+            android:textColor="@color/white"
+            />
 
         <Button
             android:layout_weight="1"
@@ -36,19 +36,18 @@
             android:id="@+id/stop_button"
             android:onClick="stopButtonClick"
             android:layout_gravity="top|center"
-            android:textColor="#ffffff"
-            style="@android:style/Animation" />
+            android:textColor="@color/white"
+            />
 
         <Button
             android:layout_weight="1"
             android:layout_height="wrap_content"
-
             android:text="Reset"
             android:id="@+id/reset_button"
             android:onClick="resetButtonClick"
             android:layout_alignTop="@+id/start_button"
-            android:textColor="#fffdfd"
-            style="@android:style/Animation" />
+            android:textColor="@color/white"
+            />
     </TableRow>
 
 </LinearLayout>

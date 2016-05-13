@@ -3,7 +3,7 @@ package com.studypal.khadija.studypal.Calendar;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,19 +18,24 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import static android.app.Activity.RESULT_OK;
 import static com.studypal.khadija.studypal.Calendar.Constants.DATE_KEY;
 
-public class MonthGridFragment extends Fragment {
+/**
+ * Created by Khadija on 13-05-2016.
+ */
+public class CalendarActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_calendar_grid);
+      //  setTitle("Study Logs");
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
     private static final int REQUEST_CODE = 1;
     private Calendar calendar;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_calendar_grid, container, false);
-
-        return rootView;
-    }
 
     @Override
     public void onResume() {
@@ -43,7 +48,7 @@ public class MonthGridFragment extends Fragment {
     }
 
     private void refresh() {
-        final GridView calendarView = (GridView) getView().findViewById(R.id.calendar_grid_view);
+        final GridView calendarView = (GridView) findViewById(R.id.calendar_grid_view);
 
         setTitle();
         initListAdapter(calendarView);
@@ -60,7 +65,7 @@ public class MonthGridFragment extends Fragment {
 
     private void startListActivity(GridItem item) {
         calendar.set(Calendar.DATE, item.getDay());
-        Intent intent = new Intent(getActivity(), EventListActivity.class);
+        Intent intent = new Intent(this, EventListActivity.class);
         intent.putExtra(DATE_KEY, calendar.getTime());
         startActivityForResult(intent, REQUEST_CODE);
     }
@@ -76,7 +81,7 @@ public class MonthGridFragment extends Fragment {
     }
 
     public void showAllEvents() {
-        Intent intent = new Intent(getActivity(), AllEventsActivity.class);
+        Intent intent = new Intent(this, AllEventsActivity.class);
         intent.putExtra(DATE_KEY, calendar.getTime());
         startActivityForResult(intent, REQUEST_CODE);
     }
@@ -90,8 +95,8 @@ public class MonthGridFragment extends Fragment {
     }
 
     private void setTitle() {
-        getActivity().setTitle(CalUtil.dateToFormattedString(calendar.getTime(), "MMMM, yyyy"));
-       ;
+        setTitle(CalUtil.dateToFormattedString(calendar.getTime(), "MMMM, yyyy"));
+        ;
     }
 
     private void initListAdapter(final GridView calendarView) {
@@ -104,7 +109,7 @@ public class MonthGridFragment extends Fragment {
                     calendarView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
 
-                CalendarEventDataSource dataSource = new CalendarEventDataSource(getActivity());
+                CalendarEventDataSource dataSource = new CalendarEventDataSource(getBaseContext());
                 dataSource.openReadOnlyDB();
                 List<GridItem> gridList = CalUtil.getGridList(calendar.getTime(),
                         dataSource.getDaysWithEventsForMonth(calendar.getTime()));
