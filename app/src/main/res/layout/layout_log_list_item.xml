@@ -25,13 +25,15 @@ android:layout_margin="@dimen/container_margin">
         android:text="12/21/2212, 55:00"
         android:textColor="@color/primary_text"
         android:textSize="@dimen/datetime_size" />
-       <!-- <TextView
+        <!--<TextView
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="StudyDate"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/datetime_size"
+            android:id="@+id/txtDate"
+
             />-->
 </TableRow>
 

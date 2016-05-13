@@ -122,6 +122,21 @@ public class NavBaseActivity extends AppCompatActivity  implements NavigationVie
             fm.beginTransaction().replace(R.id.content_frame,new ScribbleFragment()).commit();
 
         }
+        else if (id == R.id.item_about_us) {
+            //Handle the Logout click action
+           // fm.beginTransaction().replace(R.id.content_frame,new LogoutFragment()).commit();
+            startActivity(new Intent(this, LogoutActivity_new.class));
+
+        }
+        else if (id == R.id.item_rate) {
+            //Handle the Logout click action
+            // fm.beginTransaction().replace(R.id.content_frame,new LogoutFragment()).commit();
+            startActivity(new Intent(this, RateUsActivity.class));
+        }
+        else if (id == R.id.item_share) {
+            //Handle the Logout click action
+            // fm.beginTransaction().replace(R.id.content_frame,new LogoutFragment()).commit();
+            startActivity(new Intent(this, ShareAppActivity.class));}
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

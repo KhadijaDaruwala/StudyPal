@@ -116,7 +116,7 @@ public class NavBaseActivity extends AppCompatActivity
 
         }
         else if (id == R.id.item_share) {
-            //Handle the ShareApp click action
+            //Handle the RateUs click action
             fm.beginTransaction().replace(R.id.content_frame,new ShareAppFragment()).commit();
 
         }

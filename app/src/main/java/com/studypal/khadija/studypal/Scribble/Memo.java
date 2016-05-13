@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Memo implements Serializable {
-    private Date date;
+    private static Date date;
     private String text;
     private boolean fullDisplayed;
     private static DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyy 'at' hh:mm aaa");
@@ -20,7 +20,7 @@ public class Memo implements Serializable {
         this.text = text;
     }
 
-    public String getDate() {
+    public static String getDate() {
         return dateFormat.format(date);
     }
 

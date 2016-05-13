@@ -3,6 +3,8 @@ package com.studypal.khadija.studypal.Login;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
+import android.service.carrier.CarrierMessagingService;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,11 +26,19 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.studypal.khadija.studypal.NavBaseActivity;
 import com.studypal.khadija.studypal.R;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.studypal.khadija.studypal.Login.SocialLogin;
+
 import java.util.Arrays;
 
 public class SocialLogin extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
     private static final String TAG = SocialLogin.class.getSimpleName();
-    private GoogleApiClient mGoogleApiClient;
+    private static GoogleApiClient mGoogleApiClient;
     private SignInButton mSignInButton;
     private static final int RC_SIGN_IN = 0;
     private CallbackManager mCallbackManager;
@@ -155,6 +165,21 @@ public class SocialLogin extends AppCompatActivity implements GoogleApiClient.On
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
     //[END signIn]
+
+    // [START signOut]
+    public static void signOut() {
+        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
+                new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(Status status) {
+                        // [START_EXCLUDE]
+                        //updateUI(false);
+                        // [END_EXCLUDE]
+                    }
+                });
+    }
+    // [END signOut]
+
 
     @Override
     protected void onResume() {
